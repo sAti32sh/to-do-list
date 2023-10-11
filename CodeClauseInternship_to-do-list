@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    
+    <style>
+        
+        body {
+            font-style: oblique;
+            text-align: center;
+            background-color:aqua;
+            margin-top: 400PX;
+        }
+
+        h1 {
+            color:red;
+        }
+
+        #t{
+            width: 500px;
+            padding: 10px;
+        }
+
+        #B{
+            background-color:red;
+            color:aqua;
+            padding: 20px 30px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        #addButton:hover {
+            background-color: #0056b3;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .deleteButton {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;CodeClauseInternship_ProjectName
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TO-DO LIST</h1>
+    <input type="text" id="t" placeholder="Add a new task...">
+    <button id="B">ADD TASK</button>
+    <ul id="ts"></ul>
+
+    <script>
+      
+        const taskInput = document.getElementById("t");
+        const addButton = document.getElementById("B");
+        const taskList = document.getElementById("ts");
+
+        addButton.addEventListener("click", function() {
+            const taskText = t.value.trim();
+            if (taskText !== "") {
+                const listItem = document.createElement("li");
+                listItem.innerHTML = `
+                    ${taskText}
+                    <button class="deleteButton">Delete</button>
+                `;
+                ts.appendChild(listItem);
+
+        
+                t.value = "";
+
+                const deleteButton = listItem.querySelector(".deleteButton");
+                deleteButton.addEventListener("click", function() {
+                    taskList.removeChild(listItem);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
